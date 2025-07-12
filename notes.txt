@@ -1,0 +1,29 @@
+psudocode for this file
+rock-paper-scissors
+* the game consists of (2 player) random choices for 3 
+consecutive games to complete a round.
+* each player has 3 different choices per try.
+* each choice has a value greater or lesser value that the selected choices
+* the best out 3 wins the round
+
+    choice value:
+    *rock = 1 (integer id) - rock > scissors
+    *paper = 2 (integer id) - paper > rock
+    *scissors = 3 (integer id) - scissors > paper
+    
+    
+
+    Player choice :
+    * pick (rock, paper, scissors). in this case enter text.  
+    * prompt to enter player choice.
+    
+
+    Computer choice algorithm:
+    * function to choose a random number from 1 - 3.
+
+    Compare values:
+    * compare (computeChoice) and (playerChoice)
+    * winner scores 1. 
+    * best out of 3 wins round.
+
+
