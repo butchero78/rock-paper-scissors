@@ -34,7 +34,7 @@
                 1: "rock",
                 2: "paper",
                 3: "scissors"
-            }
+            }  // choice variable given a optional value of 3 outcomes
             const randNumber = Math.floor(Math.random() * 3) + 1; {
                 return choices[randNumber];
             }
@@ -62,7 +62,8 @@
         // }
         function getHumanChoice() {
             let massage = prompt('Enter your choice');
-            if (massage === null) {
+            massage = massage.toLowerCase();
+            if (massage === "null") {
                 return "enter choice";
             } else if (massage === "rock") {
                 return "rock";
@@ -71,7 +72,7 @@
             } else if (massage === "scissors") {
                 return "scissors";
             } else {
-                return "please make a choice"
+                return prompt("please make a choice")
             }
         }
 
@@ -81,12 +82,9 @@
         let computerScore = 0;
         //after using google to help figure it out..
         //console.log(getHumanChoice())
-        function playRound(humanChoice, computerChoice) {
+        function playRound(humanSelection, computerSelection) {
             //code
 
-            function convertToLower(humanChoice) {
-                return input.toLowerCase();
-            }
             if (humanSelection === computerSelection) {
                 return "it's a tie";
             }
@@ -100,7 +98,7 @@
             }
             if (humanSelection === "paper") {
                 if (computerSelection === "rock") {
-                    return " paper beats rock, you win.!!";
+                    return "paper beats rock, you win.!!";
                 } else {
                     return "rock beats scissors, you lose.!!";
                 }
@@ -112,12 +110,72 @@
                     return "paper beats rock, you lose.!!";
                 }
             }
+
+
         }
 
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
-        humanSelection.toLowerCase();
         playRound(humanSelection, computerSelection);
+
+        console.log(playRound(humanSelection, computerSelection));
+
+        const roundResult = playRound(humanSelection, computerSelection);
+        // console.log(roundResult);
+
+        function updateScores(humanOutcome, computerOutcome) {
+
+
+            // if (roundResult === "rock beats scissors, you win.!!") {
+            //     return 1;
+            // } if (roundResult === "paper beats rock, you lose.!!") {
+            //     return 1;
+            // }
+            // let human = text.includes("win");
+            // if (true) {
+            //     humanScore = humanScore + 1;
+            // }
+        }
+        // const roundScore =
+        //     console.log(updateScores
+        // let newHumanScore = humanScore;
+        // let newComputerScore = computerScore;
+
+
+
+        //console.log(human);
+        console.log(humanScore);
+
+        // let computerScore = text.includes(lose), {
+        //     if Boolean = computerScore + 1;
+        //     }
+        // }
+
+
+
+
+        // if (newHumanScore === 5) {
+        //     return "Human playe wins.!!!";
+        // } else if (newComputerScore === 5) {
+        //     return "Computer player wins, fatallity.!!!";
+        // }
+
+        // }
+
+        // newHumanScore = humanScore + newHumanScore;
+        // newComputerScore = computerScore + newComputerScore;
+        // console.log(newHumanScore);
+        // console.log(newComputerScore);
+
+
+        //THIS IS REASERCH FOR THE OPERATOR TO DETERMINE WINNER AND ADD TO THE COUNT!!
+        //google looked up --includes()-- to pick "win" from a string to determine winner.
+        //1. USE: LET "VARIABLE" = TEXT.INCLUDES("") TO PICK WIN FROM THE STRING//---will give "true" statement
+        //2. IF TRUE ADD 1 POINT TO THE SCORE, OTHERWISE REMAIN UNCHANGED.
+        //3. CHNGE THE GLOBAL VARIABLE TO REFLECT THE NEW SCORE
+        //4. AFTER 5 ROUNDS RESET THE GLOBAL VARIABLE
+        // let true = "winner"
+        // let false = "lose"
 
 
     </script>
