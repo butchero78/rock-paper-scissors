@@ -40,32 +40,13 @@
             }
         }
 
-
-
-
-        // console.log(getComputerChoice(3) + 1);
-        // function getHumanChoice() {
-        //     prompt("Your Choice");
-        // }
-        // getHumanChoice();
-        // // let rock = 1;
-        // function getRock() {
-        //     return rock(1);
-        // }
-        // // console.log(rock)
-        // function getPaper() {
-        //     return paper(2);
-        // }
-
-        // function getScissors() {
-        //     return scissors(3);
-        // }
         function getHumanChoice() {
             let massage = prompt('Enter your choice');
-            massage = massage.toLowerCase();
-            if (massage === "null") {
+            if (massage === null) {
                 return "enter choice";
-            } else if (massage === "rock") {
+            }
+            massage = massage.toLowerCase();
+            if (massage === "rock") {
                 return "rock";
             } else if (massage === "paper") {
                 return "paper";
@@ -77,37 +58,51 @@
         }
 
 
-
         let humanScore = 0;
         let computerScore = 0;
-        //after using google to help figure it out..
-        //console.log(getHumanChoice())
-        function playRound(humanSelection, computerSelection) {
+
+        function playRound(humanChoice, computerChoice) {
             //code
+            humanChoice = humanSelection;
+            computerChoice = computerSelection;
 
-            if (humanSelection === computerSelection) {
-                return "it's a tie";
+
+
+            if (humanChoice === computerChoice) {
+                return alert("it's a tie");
             }
 
-            if (humanSelection === "rock") {
-                if (computerSelection === "scissors") {
-                    return "rock beats scissors, you win.!!";
+            if (humanChoice === "rock") {
+                if (computerChoice === "scissors") {
+                    ++humanScore;
+                    console.log("human Wins:", humanScore);
+                    return alert("rock beats scissors, you win.!!");
                 } else {
-                    return "paper beats rock, you lose.!!";
+                    ++computerScore;
+                    console.log("computer wins:", computerScore);
+                    return alert("paper beats rock, you lose.!!");
                 }
             }
-            if (humanSelection === "paper") {
-                if (computerSelection === "rock") {
-                    return "paper beats rock, you win.!!";
+            if (humanChoice === "paper") {
+                if (computerChoice === "rock") {
+                    ++humanScore;
+                    console.log("human Wins:", humanScore);
+                    return alert("paper beats rock, you win.!!");
                 } else {
-                    return "rock beats scissors, you lose.!!";
+                    ++computerScore;
+                    console.log("computer wins:", computerScore);
+                    return alert("rock beats scissors, you lose.!!");
                 }
             }
-            if (humanSelection === "scissors") {
-                if (computerSelection === "paper") {
-                    return "scissors beat paper, you win.!!";
+            if (humanChoice === "scissors") {
+                if (computerChoice === "paper") {
+                    ++humanScore;
+                    console.log("human Wins:", humanScore);
+                    return alert("scissors beat paper, you win.!!");
                 } else {
-                    return "paper beats rock, you lose.!!";
+                    ++computerScore;
+                    console.log("computer wins:", computerScore);
+                    return alert("paper beats rock, you lose.!!");
                 }
             }
 
@@ -118,13 +113,20 @@
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
 
-        console.log(playRound(humanSelection, computerSelection));
 
-        const roundResult = playRound(humanSelection, computerSelection);
+
+        //console.log(playRound(humanSelection, computerSelection));
+
+        // const roundResult = playRound(humanSelection, computerSelection);
         // console.log(roundResult);
 
         function updateScores(humanOutcome, computerOutcome) {
 
+            let update = roundResult;
+
+            let computerWin = playRound().includes("lose"); {
+                console.log(computerWin)
+            }
 
             // if (roundResult === "rock beats scissors, you win.!!") {
             //     return 1;
@@ -144,7 +146,7 @@
 
 
         //console.log(human);
-        console.log(humanScore);
+        // console.log(humanScore);
 
         // let computerScore = text.includes(lose), {
         //     if Boolean = computerScore + 1;
